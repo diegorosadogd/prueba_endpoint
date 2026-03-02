@@ -14,6 +14,10 @@ TLALPAN_BOUNDS = {
     "lon_max": -99.10093
 }
 
+@app.get("/")
+async def root():
+    return {"message": "Hola Mundo"}
+
 @app.get("/random-points", response_model=Dict[str, Any])
 async def get_random_points(count: int = 10):
     """
