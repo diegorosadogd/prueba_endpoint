@@ -34,10 +34,10 @@ async def get_random_points(count: int = 50):
             "geometry": {
                 "type": "Point",
                 "coordinates": [lon, lat] , # GeoJSON coordinates are [longitude, latitude]
-                "negocio":random.choice(["tienda","restaurante"])
             },
             "properties": {
-                "id": _ + 1
+                "id": _ + 1,
+                "negocio":random.choice(["tienda","restaurante"])
             }
         }
         features.append(feature)
