@@ -19,7 +19,7 @@ async def root():
     return {"message": "Hola Mundo"}
 
 @app.get("/random-points", response_model=Dict[str, Any])
-async def get_random_points(count: int = 10):
+async def get_random_points(count: int = 50):
     """
     Generates 'count' random points within the Tlalpan bounding box
     and returns them as a GeoJSON FeatureCollection.
@@ -33,7 +33,8 @@ async def get_random_points(count: int = 10):
             "type": "Feature",
             "geometry": {
                 "type": "Point",
-                "coordinates": [lon, lat]  # GeoJSON coordinates are [longitude, latitude]
+                "coordinates": [lon, lat] , # GeoJSON coordinates are [longitude, latitude]
+                "negocio":random.choice(["tienda","restaurante"])
             },
             "properties": {
                 "id": _ + 1
