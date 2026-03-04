@@ -37,7 +37,7 @@ async def get_random_points(count: int = 50):
             },
             "properties": {
                 "id": _ + 1,
-                "negocio":random.choice(["tienda","restaurante"])
+                "negocio":random.choice(["tienda","restaurante","bar"])
             }
         }
         features.append(feature)
